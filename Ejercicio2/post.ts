@@ -1,15 +1,7 @@
 import { rl } from "./readline"
 // clase para imagen, texto, video 
 
-abstract class Post {
-    constructor(public title: string, public id: number, public coments: string) { }
 
-    public abstract postContent(): any
-
-    public postEnd(): any {
-        console.log(`Su ${type} con el titulo de ${this.title} ha sido publicado`)
-    }
-}
 
 async function publicaralgo() {
     let condition = true
@@ -45,13 +37,3 @@ async function publicaralgo() {
 
 // en alguna parte meter esto
 
-if (id = 1) {
-    //es texto
-    let type = `Documento de texto`
-} else if (id = 2) {
-    //es imagen
-    let type = `Imagen`
-} else if (id = 3) {
-    //es video
-    let type = `Video`
-}
