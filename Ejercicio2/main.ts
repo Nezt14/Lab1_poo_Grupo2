@@ -1,5 +1,7 @@
 import { rl } from "./readline";
 
+
+//Redes sociales
 async function Menu() {
 
     let condition = true;
@@ -21,6 +23,7 @@ async function Menu() {
 
                     break;
                 case 5:// ver comentarios
+                // para ver los comentarios se puede 
 
                     break;
                     
