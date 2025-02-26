@@ -1,4 +1,5 @@
 import { rl } from "./readline";
+import { publicaralgo } from "./post";
 
 
 //Redes sociales
@@ -11,7 +12,7 @@ async function Menu() {
             const opcion1 = Number(await rl.question(`Opciones disponibles: \n 1. Publicar algo. \n 2. Gestionar amistades. \n 3. Comentar una publicacion. \n 4. Compartir una publicacion \n 5. Ver mensajes. \n 6. salir. `))
             switch (opcion1) {
                 case 1://publicar algo
-
+                publicaralgo()
                     break;
                 case 2:// gestionar amistades
 
@@ -42,3 +43,5 @@ async function Menu() {
 
     } while (condition = false);
 }
+
+Menu()

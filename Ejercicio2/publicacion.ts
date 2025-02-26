@@ -1,33 +1,45 @@
+import { publicaralgo } from "./post"
 
+let type = ` `
 abstract class Post {
+    constructor(public title: string, public id: number) { }
 
-    public abstract postContent(title:string, id:number): any
+    public abstract postContent(title: string, id: number): any
 
-    public abstract coment(coment:string):any
+    public abstract coment(coment: string): any
 
+    public postFinal(): any {
+        return `Su ${type} con el titulo ${this.title} fue publicado con exito`
+    }
 }
 
-abstract class Publicar extends Post {
-    public postContent(title: string, id: number) {
-        if (id = 1) {
-            //es texto
-            let type = `Documento de texto`
-            return `Publicando su ${type}, con el titulo de ${title} ...`
 
-        } else if (id = 2) {
-            //es imagen
+export class PostThing extends Post {
+
+    public postContent(title: string, id: number) {
+        if (this.id = 1) {
+            let type = `Documento de texto`
+            return `Su ${type} con el titulo ${this.title} se esta publicando`
+
+        } else if (this.id = 2) {
             let type = `Imagen`
-            return `Publicando su ${type}, con el titulo de ${title} ...`
-        } else if (id = 3) {
-            //es video
+            return `Su ${type} con el titulo ${this.title} se esta publicando`
+
+        } else {
             let type = `Video`
-            return `Publicando su ${type}, con el titulo de ${title} ...`
-        }   
+            return `Su ${type} con el titulo ${this.title} se esta publicando`
+
+        } 
+
     }
+    public coment(coment: string): any {
+
+    }
+
 }
 
 abstract class Comentar extends Post {// quiza cambiar esto
     public coment(coment: string): any {
-        
+
     }
 }

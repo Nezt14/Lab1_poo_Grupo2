@@ -1,9 +1,10 @@
 import { rl } from "./readline"
+import { PostThing } from "./publicacion";
 // clase para imagen, texto, video 
 
 
 
-async function publicaralgo() {
+export async function publicaralgo() {
     let condition = true
     do {
         try {
@@ -12,15 +13,25 @@ async function publicaralgo() {
                 console.log(`Seleccione una opcion valida`)
             } else {
                 switch (opcion) {
-                    case 1:
+                    case 1://Doc texto
 
+                        let titulo = await rl.question(`Escriba el Titulo que desea publicar: `)
+                        const pub1 = new PostThing(titulo, 1)
+                        console.log(`${pub1.postContent}`)// arreglar esto
                         break;
-                    case 2:
+                    case 2://imagen
+                        let titulo1 = await rl.question(`Escriba el Titulo que desea publicar: `)
+
+                        const pub2 = new PostThing(titulo1, 2)
                         break;
-                    case 3:
+                    case 3://video
+                        const titulo2 = await rl.question(`Escriba el Titulo que desea publicar: `)
+
+                        const pub3 = new PostThing(titulo2, 3)
                         break;
 
                     default:
+                        rl.close()
                         break;
                 }
             }
@@ -35,5 +46,5 @@ async function publicaralgo() {
 }
 
 
-// en alguna parte meter esto
+
 
