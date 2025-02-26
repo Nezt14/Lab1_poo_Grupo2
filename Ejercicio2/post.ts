@@ -1,14 +1,16 @@
 import { rl } from "./readline"
-import { PostThing } from "./publicacion";
+import { PostImage } from "./publicacion";
+import { PostText } from "./publicacion";
+import { PostVideo } from "./publicacion";
 // clase para imagen, texto, video 
 
 
 
 export async function publicaralgo() {
-    let condition = true
-    let type =``
+    
+     let type =``
     do {
-        condition = true
+        let condition = true
         try {
             const opcion = Number(await rl.question("Que desea publicar? \n 1. Documento de texto. \n 2. Imagen \n 3. Video. \n Opcion: "))
             if (opcion == 1) {
@@ -31,19 +33,23 @@ export async function publicaralgo() {
                     case 1://Doc texto
 
                         let titulo = await rl.question(`Escriba el Titulo que desea publicar: `)
-                        const pub1 = new PostThing(titulo, 1)
+                        const pubT = new PostText(titulo, 1)
                         
-                        console.log(pub1.postFinal)// arreglar esto
+                        console.log(pubT.postContent)// arreglar esto
                         break;
                     case 2://imagen
                         let titulo1 = await rl.question(`Escriba el Titulo que desea publicar: `)
-
-                        const pub2 = new PostThing(titulo1, 2)
+                        
+                        const pubI = new PostImage(titulo1, 2)
+                        console.log(pubI.postContent)
                         break;
                     case 3://video
                         const titulo2 = await rl.question(`Escriba el Titulo que desea publicar: `)
 
-                        const pub3 = new PostThing(titulo2, 3)
+                        const pubV = new PostVideo(titulo2, 3)
+                        console.log(pubV.postContent
+                        
+                        )
                         break;
 
                     default:
@@ -55,12 +61,11 @@ export async function publicaralgo() {
         } catch (error) {
             console.error(error)
         } finally {
-            let condition = false
-        }
+           
+        } 
 
-    } while (condition = false);
+    } while (condition = true);
 }
 
-
-
+export let Publicaciones = []
 

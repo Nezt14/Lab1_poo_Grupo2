@@ -9,7 +9,7 @@ async function Menu() {
 
     do {// no de donde meter lo de Notificar interacciones
         try {
-            const opcion1 = Number(await rl.question(`Opciones disponibles: \n 1. Publicar algo. \n 2. Gestionar amistades. \n 3. Comentar una publicacion. \n 4. Compartir una publicacion \n 5. Ver mensajes. \n 6. salir. `))
+            const opcion1 = Number(await rl.question(`Opciones disponibles: \n 1. Publicar algo. \n 2. Gestionar amistades. \n 3. Comentar una publicacion. \n 4. Compartir una publicacion \n 5. Ver mensajes. \n 6. salir. \n opcion: `))
             switch (opcion1) {
                 case 1://publicar algo
                 publicaralgo()

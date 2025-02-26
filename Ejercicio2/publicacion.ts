@@ -7,28 +7,31 @@ abstract class Post {
     public abstract postContent(title: string, id: number): any
 
     public abstract coment(coment: string): any
-
-    public postFinal(): any {
-        return `Su ${type} con el titulo ${this.title} fue publicado con exito`
-    }
 }
 
-
-export class PostThing extends Post {
-
+export class PostText extends Post {
+    public postContent(title: string, id: number) {
+        return `Su Documento de texto con el titulo de ${this.title} se esta publicando.`
+    }
+    public coment(coment: string) {
+        
+    }
+}
+export class PostImage extends Post {
+    public postContent(title: string, id: number) {
+        return `Su Imagen con el titulo de ${this.title} se esta publicando.`
+    }
+    public coment(coment: string) {
+        
+    }
+}
+export class PostVideo extends Post {
     public postContent(title: string, id: number) {
         
-            return `Su ${type} con el titulo ${this.title} se esta publicando`
+        return `Su Video con el titulo de ${this.title} se esta publicando.`
     }
-    public coment(coment: string): any {
-
-    }
-    
-
-}
-
-abstract class Comentar extends Post {// quiza cambiar esto
-    public coment(coment: string): any {
-
+    public coment(coment: string) {
+        
     }
 }
+
