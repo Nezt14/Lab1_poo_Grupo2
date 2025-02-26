@@ -7,10 +7,10 @@ import { PostVideo } from "./publicacion";
 
 
 export async function publicaralgo() {
-    
+    let condition = true
      let type =``
     do {
-        let condition = true
+        
         try {
             const opcion = Number(await rl.question("Que desea publicar? \n 1. Documento de texto. \n 2. Imagen \n 3. Video. \n Opcion: "))
             if (opcion == 1) {
@@ -34,8 +34,9 @@ export async function publicaralgo() {
 
                         let titulo = await rl.question(`Escriba el Titulo que desea publicar: `)
                         const pubT = new PostText(titulo, 1)
-                        
-                        console.log(pubT.postContent)// arreglar esto
+                        Publicaciones.push(pubT)
+                        console.log(Publicaciones[0]['title'])// esto solo muestra el titulo sin nada
+
                         break;
                     case 2://imagen
                         let titulo1 = await rl.question(`Escriba el Titulo que desea publicar: `)
@@ -47,13 +48,11 @@ export async function publicaralgo() {
                         const titulo2 = await rl.question(`Escriba el Titulo que desea publicar: `)
 
                         const pubV = new PostVideo(titulo2, 3)
-                        console.log(pubV.postContent
-                        
-                        )
+                        console.log(pubV.postContent)
                         break;
 
                     default:
-                        
+                        condition = false
                         return;
                 }
             }
@@ -64,8 +63,8 @@ export async function publicaralgo() {
            
         } 
 
-    } while (condition = true);
+    } while (condition);
 }
 
-export let Publicaciones = []
+export let Publicaciones:any = []
 
