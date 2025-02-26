@@ -1,3 +1,3 @@
-interface nocAun{
-    
+interface comentarios{
+    postComent():string
 }
