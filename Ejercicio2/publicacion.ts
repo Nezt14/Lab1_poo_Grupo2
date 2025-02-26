@@ -23,6 +23,7 @@ export class PostThing extends Post {
     public coment(coment: string): any {
 
     }
+    
 
 }
 

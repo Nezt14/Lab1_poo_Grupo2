@@ -8,6 +8,7 @@ export async function publicaralgo() {
     let condition = true
     let type =``
     do {
+        condition = true
         try {
             const opcion = Number(await rl.question("Que desea publicar? \n 1. Documento de texto. \n 2. Imagen \n 3. Video. \n Opcion: "))
             if (opcion == 1) {
@@ -31,6 +32,7 @@ export async function publicaralgo() {
 
                         let titulo = await rl.question(`Escriba el Titulo que desea publicar: `)
                         const pub1 = new PostThing(titulo, 1)
+                        
                         console.log(pub1.postFinal)// arreglar esto
                         break;
                     case 2://imagen
@@ -45,7 +47,7 @@ export async function publicaralgo() {
                         break;
 
                     default:
-                        rl.close()
+                        
                         return;
                 }
             }
@@ -53,10 +55,10 @@ export async function publicaralgo() {
         } catch (error) {
             console.error(error)
         } finally {
-
+            let condition = false
         }
 
-    } while (condition);
+    } while (condition = false);
 }
 
 
