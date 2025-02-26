@@ -17,20 +17,8 @@ abstract class Post {
 export class PostThing extends Post {
 
     public postContent(title: string, id: number) {
-        if (this.id = 1) {
-            let type = `Documento de texto`
+        
             return `Su ${type} con el titulo ${this.title} se esta publicando`
-
-        } else if (this.id = 2) {
-            let type = `Imagen`
-            return `Su ${type} con el titulo ${this.title} se esta publicando`
-
-        } else {
-            let type = `Video`
-            return `Su ${type} con el titulo ${this.title} se esta publicando`
-
-        } 
-
     }
     public coment(coment: string): any {
 
