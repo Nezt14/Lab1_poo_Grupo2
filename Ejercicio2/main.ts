@@ -3,7 +3,7 @@ import { publicaralgo } from "./post";
 
 
 //Redes sociales
-async function Menu() {
+export async function Menu() {
 
     let condition = true;
 
