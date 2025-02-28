@@ -1,4 +1,3 @@
-// src/main.ts
 import { rl } from "./readline";
 import {
     realizarTransaccion,
