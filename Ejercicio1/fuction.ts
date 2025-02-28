@@ -1,6 +1,4 @@
-import { rl } from "./readline";
-import { MarketSimulator } from "./marketSimulator";
-import { MarketOrder, LimitOrder, MovingAverageStrategy, RSIStrategy } from "./";
+import { rl } from "./readlie";
 
 const simulator = new MarketSimulator();
 
