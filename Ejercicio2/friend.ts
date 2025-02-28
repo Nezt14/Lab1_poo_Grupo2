@@ -6,11 +6,12 @@ export  class Friends implements ManageFriends{
     constructor(public id: number, public name: string) {
     }
     public showFriends(): string {
-        return `Sus amigos actuales son: \n ${friendsList}  `
+        
+        return `Sus amigos actuales son: \n ${friendsList[amigo1].name} \n ${friendsList[amigo2].name}  `
     }
 
     addFriend(): void {
-        const amigo3 = new Friends(3,``)
+        friendsList.push(new Friends(friendsList.length +1 ,""));
 
     }
     deleteFriend(): void {
@@ -58,3 +59,6 @@ export async function shareFriend() {// esto para compartir con los amigos
             break;
     }
 }
+friendsList.forEach(Friends => {
+    console.log(`${Friends.name}`)// esto devuelve los nombres de toda la lista
+});
