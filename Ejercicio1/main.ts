@@ -1,39 +1,58 @@
-import { rl } from "./readlie";
+import { rl } from "./readline";
+import {
+    realizarTransaccion,
+    ejecutarEstrategias,
+    calcularTendencias,
+    calcularGananciasPerdidas,
+    agregarAlertaPrecio,
+} from "./fuction";
 
-//Mercado de crypto
-async function Menu() {
-
+async function menu() {
     let condition = true;
-
+    
     do {
         try {
-            const opcion1 = Number(await rl.question(`Opciones disponibles: \n 1. Realizar transaccion. \n 2. Estrategias de traiding?. \n 3. Calcular tendencias y predicciones. \n 4. Calcular ganancias/perdidas. \n 5. salir. `))
-            switch (opcion1) {// tampoco se donde meter lo de Generar alertas de precio , ni Maneje diferentes tipos de órdenes
-                case 1://Realizar transaccion
+            const opcion = Number(await rl.question(
+                `Opciones disponibles: \n` +
+                `1. Realizar transacción. \n` +
+                `2. Ejecutar estrategias de trading. \n` +
+                `3. Calcular tendencias y predicciones. \n` +
+                `4. Calcular ganancias/pérdidas. \n` +
+                `5. Agregar alerta de precio. \n` +
+                `6. Salir. \n` +
+                `Seleccione una opción: `
+            ));
 
+            switch (opcion) {
+                case 1:
+                    await realizarTransaccion();
                     break;
-                case 2:// Estrategias 
-
+                case 2:
+                    await ejecutarEstrategias();
                     break;
-                case 3:// Tendencias y prediciciones
-
+                case 3:
+                    await calcularTendencias();
                     break;
-                case 4:// ganancias/perdidas  esto se puede con un if (si es + de tanto es ganancia y si es - es perdida)
-
+                case 4:
+                    await calcularGananciasPerdidas();
                     break;
-                    
-                case 5:// salir
-                    console.log(`Saliendo del programa`)
+                case 5:
+                    await agregarAlertaPrecio();
+                    break;
+                case 6:
+                    console.log("Saliendo del programa.");
                     condition = false;
                     rl.close();
                     break;
                 default:
+                    console.log("Opción no válida. Intente de nuevo.");
                     break;
             }
-
         } catch (error) {
-
+            console.error("Error en el menú:", error);
         }
-
-    } while (condition = false);
+    } while (condition);
 }
+
+// Ejecutar el menú
+menu();
