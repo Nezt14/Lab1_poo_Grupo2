@@ -1,5 +1,4 @@
 import { rl } from "./readlie";
-
 const simulator = new MarketSimulator();
 
 export async function realizarTransaccion() {
