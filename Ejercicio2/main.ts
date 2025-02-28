@@ -9,7 +9,7 @@ export async function Menu() {
 
     do {// no de donde meter lo de Notificar interacciones
         try {
-            const opcion1 = Number(await rl.question(`Opciones disponibles: \n 1. Publicar algo. \n 2. Gestionar amistades. \n 3. Comentar una publicacion. \n 4. Compartir una publicacion \n 5. Ver mensajes. \n 6. salir. \n opcion: `))
+            const opcion1 = Number(await rl.question(`Opciones disponibles: \n 1. Publicar algo. \n 2. Gestionar amistades. \n 3. Ver publicaciones. \n 4. Ver mensajes \n 5. Interacciones. \n 6. salir. \n opcion: `))
             switch (opcion1) {
                 case 1://publicar algo
                 publicaralgo()
@@ -17,14 +17,13 @@ export async function Menu() {
                 case 2:// gestionar amistades
 
                     break;
-                case 3:// comentar una publicacion
+                case 3:// ver publicaciones "aqui meter ver comentarios y compartir publicaciones"
 
                     break;
-                case 4://compartir publicacion
+                case 4://ver/mandar mensajes
 
                     break;
-                case 5:// ver comentarios
-                // para ver los comentarios se puede 
+                case 5:// interacciones?
 
                     break;
                     

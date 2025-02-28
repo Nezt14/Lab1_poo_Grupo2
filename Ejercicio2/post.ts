@@ -39,14 +39,15 @@ export async function publicaralgo() {
 
                     const pubI = new PostImage(titulo1, 2)
                     Publicaciones.push(pubI)
-                    console.log(pubI.postContent)
+                    
+                    console.log(`Su Imagen/foto con el titulo ${Publicaciones[opcion - 1]['title']} fue publicado con exito`)
                     Menu()
                     break;
                 case 3://video
                     const titulo2 = await rl.question(`Escriba el Titulo que desea publicar: `)
                     const pubV = new PostVideo(titulo2, 3)
                     Publicaciones.push(pubV)
-                    console.log(pubV.postContent)
+                    console.log(`Su Video con el titulo ${Publicaciones[opcion - 1]['title']} fue publicado con exito`)
                     Menu()
                     break;
                 case 4:
