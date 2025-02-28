@@ -1,4 +1,6 @@
 import { rl } from "./readline";
+import { ManageFriends } from "./interface";
+
 
 export  class Friends implements ManageFriends{
     constructor(public id: number, public name: string) {
@@ -9,6 +11,7 @@ export  class Friends implements ManageFriends{
 
     addFriend(): void {
         const amigo3 = new Friends(3,``)
+
     }
     deleteFriend(): void {
         
@@ -31,6 +34,7 @@ console.log(friendsList[amigo1].name, friendsList[amigo2].name)// muestra los do
 
 export async function seeFriends() {
     const opcion = Number(await rl.question(``))
+
 }
 export async function manageFriends(){//agregar o eliminar amigos
     const opcion = Number(await rl.question(`que desea hacer \n 1. agregar un amigo. \n 2. eliminar un amigo. \n  `))

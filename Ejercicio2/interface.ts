@@ -2,10 +2,10 @@ interface comentarios{
     postComent():string
 }
 
-interface ManageFriends{
+export interface ManageFriends{
     addFriend():void
 
     deleteFriend():void
 
-    
+
 }

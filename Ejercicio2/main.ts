@@ -1,5 +1,7 @@
 import { rl } from "./readline";
 import { publicaralgo } from "./post";
+import { Friends, friendsList } from "./friend";
+import { ManageFriends } from "./interface";
 
 
 //Redes sociales
@@ -15,7 +17,7 @@ export async function Menu() {
                 publicaralgo()
                     break;
                 case 2:// gestionar amistades
-
+                
                     break;
                 case 3:// ver publicaciones "aqui meter ver comentarios y compartir publicaciones"
 
