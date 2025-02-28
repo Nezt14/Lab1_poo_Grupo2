@@ -5,7 +5,7 @@ import {
     calcularTendencias,
     calcularGananciasPerdidas,
     agregarAlertaPrecio,
-} from "./menuFunctions";
+} from "./fuction";
 
 async function menu() {
     let condition = true;
