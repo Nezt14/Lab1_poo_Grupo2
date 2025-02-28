@@ -1,11 +1,19 @@
 import { rl } from "./readline";
 
-export class Friends {
+export  class Friends implements ManageFriends{
     constructor(public id: number, public name: string) {
     }
     public showFriends(): string {
         return `Sus amigos actuales son: \n ${friendsList}  `
     }
+
+    addFriend(): void {
+        const amigo3 = new Friends(3,``)
+    }
+    deleteFriend(): void {
+        
+    }
+
 }
 
 export const friendsList: Friends[] = [
@@ -13,15 +21,23 @@ export const friendsList: Friends[] = [
     new Friends(2, `Cartonero`),
 ];
 
-const amigo1 = friendsList.findIndex(Friends => Friends.id === 1)
-const amigo2 = friendsList.findIndex(Friends => Friends.id === 2)
-
-const amigo3 = friendsList.findIndex(Friends => Friends.id === 3)
+export const amigo1 = friendsList.findIndex(Friends => Friends.id === 1)
+export const amigo2 = friendsList.findIndex(Friends => Friends.id === 2)
+export const amigo3 = friendsList.findIndex(Friends => Friends.id === 3)
 
 console.log(`amigo: ${friendsList[amigo2].name}`)
 
-console.log(friendsList[amigo1].name, friendsList[amigo2].name)
-export async function findFriend() {// esto para compartir con los amigos
+console.log(friendsList[amigo1].name, friendsList[amigo2].name)// muestra los dos nombres
+
+export async function seeFriends() {
+    const opcion = Number(await rl.question(``))
+}
+export async function manageFriends(){//agregar o eliminar amigos
+    const opcion = Number(await rl.question(`que desea hacer \n 1. agregar un amigo. \n 2. eliminar un amigo. \n  `))
+
+}
+
+export async function shareFriend() {// esto para compartir con los amigos
     const opcion = Number(await rl.question(`con quien desea compartir esta publicacion? \n 1. ${amigo1} \n 2. ${amigo2} `))
     switch (opcion) {
         case 1:
