@@ -19,7 +19,7 @@ export async function Menu() {
                 case 2:// gestionar amistades
                 
                     break;
-                case 3:// ver publicaciones "aqui meter ver comentarios y compartir publicaciones"
+                case 3:// ver publicaciones "aqui meter ver comentarios y compartir publicaciones" y las interacciones en este caso los likes
 
                     break;
                 case 4://ver/mandar mensajes
