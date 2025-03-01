@@ -33,8 +33,11 @@ console.log(`amigo: ${friendsList[amigo2].name}`)
 
 console.log(friendsList[amigo1].name, friendsList[amigo2].name)// muestra los dos nombres
 
-export async function seeFriends() {
-    const opcion = Number(await rl.question(``))
+export async function seeFriends(friendsList:any[]) {
+    for (let i = 0; i < friendsList.length; i++) {
+        const amigo = friendsList[i];
+        console.log(`${i+1}. ${amigo.name}`)
+  }
 
 }
 export async function manageFriends(){//agregar o eliminar amigos
@@ -43,22 +46,26 @@ export async function manageFriends(){//agregar o eliminar amigos
 }
 
 export async function shareFriend() {// esto para compartir con los amigos
-    const opcion = Number(await rl.question(`con quien desea compartir esta publicacion? \n 1. ${amigo1} \n 2. ${amigo2} `))
+    const opcion = Number(await rl.question(`con quien desea compartir esta publicacion? \n ` + seeFriends(friendsList) +`\n opcion: `  ))
+    //falta agregar aqui creo que un for servira
     switch (opcion) {
         case 1:
-            console.log(`su (aqui la publicacion que se selecciono) fue compartida con ${amigo1} `)
+            console.log(`su (aqui la publicacion que se selecciono) fue compartida con ${friendsList[amigo1].name} `)
             break;
         case 2:
-            console.log(`su (aqui la publicacion que se selecciono) fue compartida con ${amigo2} `)
+            console.log(`su (aqui la publicacion que se selecciono) fue compartida con ${friendsList[amigo2].name} `)
             break;
         case 3:
-            console.log(`su (aqui la publicacion que se selecciono) fue compartida con ${amigo3} `)
+            console.log(`su (aqui la publicacion que se selecciono) fue compartida con ${friendsList[amigo2].name} `)
             break;
 
         default:
             break;
     }
 }
+
 friendsList.forEach(Friends => {
     console.log(`${Friends.name}`)// esto devuelve los nombres de toda la lista
 });
+
+shareFriend()
