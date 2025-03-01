@@ -1,6 +1,6 @@
 import { rl } from "./readline";
 import { publicaralgo } from "./post";
-import { Friends, friendsList, seeFriends } from "./friend";
+import { Friends, friendsList, manageFriends, seeFriends, shareFriend } from "./friend";
 import { ManageFriends } from "./interface";
 
 
@@ -18,18 +18,14 @@ export async function Menu() {
                     publicaralgo()
                     break;
                 case 2:// gestionar amistades
-                    const opcion2 = Number(await rl.question(`Que desea hacer? \n 1. Ver amistades \n 2. agregar amigo. \n 3. eliminiar un amigo \n opcion: `))
+                    const opcion2 = Number(await rl.question(`Que desea hacer? \n 1. Ver amistades \n 2. agregar o eliminiar un amigo \n opcion: `))
                     switch (opcion2) {
                         case 1:
                             seeFriends(friendsList)
                             Menu()
                             break;
-                        case 2:
-
-
-                            break;
-                        case 3:
-                            
+                        case 2://agregar o eliminar
+                        manageFriends()
                             break;
 
                         default:
@@ -37,7 +33,7 @@ export async function Menu() {
                     }
                     break;
                 case 3:// ver publicaciones "aqui meter ver comentarios y compartir publicaciones" y las interacciones en este caso los likes
-
+                shareFriend()
                     break;
                 case 4://ver/mandar mensajes
 

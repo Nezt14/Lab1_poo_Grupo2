@@ -9,21 +9,12 @@ import { Menu } from "./main";
 
 export async function publicaralgo() {
 
-    const opcion = Number(await rl.question("Que desea publicar? \n 1. Documento de texto. \n 2. Imagen \n 3. Video. \n 4. Regresar \n Opcion: "))
-    if (opcion == 1) {
-        let type = `Documento de texto`
-    } else if (opcion == 2) {
-        let type = `Imagen`
-    } else if (opcion == 3) {
-        let type = `Video`
-    } else if (opcion == 4){
-        console.log(`regresando`)
-        return;
-    }
+       
     let condition = true
     do {
 
         try {
+            const opcion = Number(await rl.question("Que desea publicar? \n 1. Documento de texto. \n 2. Imagen \n 3. Video. \n 4. Regresar \n Opcion: "))
 
             switch (opcion) {
                 case 1://Doc texto
@@ -71,5 +62,5 @@ export async function publicaralgo() {
 
 }
 
-export let Publicaciones: any = []
+export const Publicaciones: any = []
 
