@@ -38,7 +38,6 @@ export async function seeFriends(friendsList:any[]) {
         const amigo = friendsList[i];
         console.log(`${i+1}. ${amigo.name}`)
   }
-
 }
 export async function manageFriends(){//agregar o eliminar amigos
     const opcion = Number(await rl.question(`que desea hacer \n 1. agregar un amigo. \n 2. eliminar un amigo. \n  `))
@@ -68,4 +67,3 @@ friendsList.forEach(Friends => {
     console.log(`${Friends.name}`)// esto devuelve los nombres de toda la lista
 });
 
-shareFriend()
