@@ -6,6 +6,7 @@ import { seePosts } from "./post";
 import { Publicaciones } from "./post";
 
 
+
 //Redes sociales
 export async function Menu() {
 

@@ -15,7 +15,7 @@ let comenta3 = ``
 export class PostText extends Post {
 
     public postComtent(title: string, id: number) {
-        let comenta1 = rl.question(`escriba su comentario`)
+        
         return `comentarios: \n ${comenta1} `
     }
     public seeComent(title: string) {
