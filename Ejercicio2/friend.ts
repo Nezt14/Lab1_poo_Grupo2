@@ -36,7 +36,7 @@ export async function manageFriends() {//agregar o eliminar amigos
     switch (opcion) {
         case 1:
             const newName = await rl.question(`Escriba el nombre de su nuevo amigo: `)
-            const amigo3 = new Friends(3,newName)
+            const amigo3 = new Friends(3, newName)
             friendsList.push(amigo3)
             console.log(`Nuevo amigo: ${newName} agregado con exito `)
             Menu()
@@ -50,7 +50,7 @@ export async function manageFriends() {//agregar o eliminar amigos
             console.log(`amigo eliminado correctamente`)
             Menu()
             break;
-            
+
 
         default:
             break;
@@ -62,7 +62,7 @@ export async function shareFriend() {// esto para compartir con los amigos
     seePosts(Publicaciones)
     let tipoPublicacion = Number(await rl.question(`que publicacion quiere compartir? `))
 
-    
+
     seeFriends(friendsList)
     const opcion = Number(await rl.question(`con quien desea compartir esta publicacion? \n opcion: `))
     //falta agregar aqui creo que un for servira
@@ -85,4 +85,49 @@ export async function shareFriend() {// esto para compartir con los amigos
 
 export const amigo1 = friendsList.findIndex(Friends => Friends.id === 1)
 export const amigo2 = friendsList.findIndex(Friends => Friends.id === 2)
-export const amigo3 = friendsList.findIndex(Friends => Friends.id === 3)
+
+
+export async function messages() {
+    const ocpion = Number(await rl.question(`que quiere hacer \n 1. Ver mis mensajes. \n 2. Enviar un mensaje \n 3. Regresar`))
+    switch (ocpion) {
+        case 1:
+            console.log(`Tienes un mensaje de ${friendsList[amigo1].name}. `)
+            console.log(`Me prestas dinero?`)
+            messages()
+            break;
+        case 2:
+            console.log(`A quien quieres enviarle un mensaje`)
+            seeFriends(friendsList)
+            const opcion1 = Number(await rl.question(`opcion: `))
+            switch (opcion1) {
+                case 1:
+                    const mensage = await rl.question(`mensaje: `)
+                    console.log(`Mensaje enviado a ${friendsList[amigo1].name} `)
+                    messages()
+                    break;
+                    case 2:
+                    const mensage1 = await rl.question(`mensaje: `)
+                    console.log(`Mensaje enviado a ${friendsList[amigo2].name} `)
+                    messages()
+                    break;
+                    case 3:
+                    const mensage2 = await rl.question(`mensaje: `)
+                    const amigo3 = friendsList.findIndex(Friends => Friends.id === 3)
+                    console.log(`Mensaje enviado a ${friendsList[amigo3].name} `)
+                    messages()
+                    break;
+            
+                default:
+                    break;
+            }
+
+            break;
+        case 3:
+            console.log(`regresando...`)
+            Menu()
+            break;
+
+        default:
+            break;
+    }
+}

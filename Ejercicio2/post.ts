@@ -3,13 +3,15 @@ import { PostImage } from "./publicacion";
 import { PostText } from "./publicacion";
 import { PostVideo } from "./publicacion";
 import { Menu } from "./main";
+import { amigo1 } from "./friend";
+import { friendsList } from "./friend";
 // clase para imagen, texto, video 
 
 
 
 export async function publicaralgo() {
 
-       
+
     let condition = true
     do {
 
@@ -30,7 +32,7 @@ export async function publicaralgo() {
 
                     const pubI = new PostImage(titulo1, 2)
                     Publicaciones.push(pubI)
-                    
+
                     console.log(`Su Imagen/foto con el titulo ${Publicaciones[opcion - 1]['title']} fue publicado con exito`)
                     Menu()
                     break;
@@ -71,6 +73,25 @@ export async function seePosts(Publicaciones: any[]) {
     }
 }
 
-export async function name() {
-    
+export async function Interacciones() {
+    console.log(`De que publicacion quiere ver las interacciones?`)
+    seePosts(Publicaciones)
+    const opcion4 = Number(await rl.question(`opcion`))
+    switch (opcion4) {
+        case 1:
+            console.log(`Su Documento de texto con el titulo ${Publicaciones[opcion4 - 1]['title']} \n Tiene 5 Likes, ${friendsList[amigo1].name} le a dado like`)
+            Menu()
+            break;
+        case 2:
+            console.log(`Su Image/Foto con el titulo ${Publicaciones[opcion4 - 1]['title']} \n Tiene 9 Likes `)
+            Menu()
+            break;
+        case 3:
+            console.log(`Su Video con el titulo ${Publicaciones[opcion4 - 1]['title']} \n Tiene 15 Likes `)
+            Menu()
+            break;
+
+        default:
+            break;
+    }
 }
