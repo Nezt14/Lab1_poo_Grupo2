@@ -1,6 +1,6 @@
 import { rl } from "./readline";
 import { ManageFriends } from "./interface";
-import { Publicaciones } from "./post";
+import { Publicaciones, seePosts } from "./post";
 import { Menu } from "./main";
 
 
@@ -59,9 +59,10 @@ export async function manageFriends() {//agregar o eliminar amigos
 }
 
 export async function shareFriend() {// esto para compartir con los amigos
-    console.log(Publicaciones)
+    seePosts(Publicaciones)
     let tipoPublicacion = Number(await rl.question(`que publicacion quiere compartir? `))
 
+    
     seeFriends(friendsList)
     const opcion = Number(await rl.question(`con quien desea compartir esta publicacion? \n opcion: `))
     //falta agregar aqui creo que un for servira

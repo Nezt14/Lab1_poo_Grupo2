@@ -62,5 +62,15 @@ export async function publicaralgo() {
 
 }
 
-export const Publicaciones: any = []
+export const Publicaciones: any[] = []
 
+export async function seePosts(Publicaciones: any[]) {
+    for (let i = 0; i < Publicaciones.length; i++) {
+        const post = Publicaciones[i];
+        console.log(`${i + 1}. ${post.title}`)
+    }
+}
+
+export async function name() {
+    
+}
