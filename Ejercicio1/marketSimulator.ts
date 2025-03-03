@@ -1,4 +1,4 @@
-// src/marketSimulator.ts
+
 import { IOrder, ITradingStrategy } from './interface';
 import { MarketData, marketData } from './marketData';
 import { PriceAlert } from './priceAlerts';

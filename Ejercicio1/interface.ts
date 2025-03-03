@@ -18,5 +18,5 @@ export interface IPriceAlert {
 }
 
 export interface ITrendCalculator {
-    calculateTrend(symbol: string): string; // "up", "down", "neutral"
+    calculateTrend(symbol: string): string; 
 }

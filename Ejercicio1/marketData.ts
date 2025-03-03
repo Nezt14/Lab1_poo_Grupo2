@@ -1,4 +1,4 @@
-// src/marketData.ts
+
 import { IMarketData } from './interface';
 
 export class MarketData implements IMarketData {
@@ -13,5 +13,5 @@ export class MarketData implements IMarketData {
     }
 }
 
-// Instancia global de MarketData
+
 export const marketData = new MarketData();

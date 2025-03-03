@@ -26,16 +26,16 @@ simulator.addStrategy(rsiStrategy);
 
 // Agregar alertas de precio
 simulator.addPriceAlert('BTC', 51000, () => {
-    console.log('ALERT: BTC price reached 51000!');
+    console.log('ALERT: BTC Precio alcanzado 51000!');
 });
 
 // Ejecutar simulación
 simulator.runSimulation();
 
 // Calcular ganancias/pérdidas
-console.log(`Profit/Loss for Market Order: ${marketOrder.calculateProfitLoss()}`);
-console.log(`Profit/Loss for Limit Order: ${limitOrder.calculateProfitLoss()}`);
+console.log(`Ganancia/perdica por Orden de Mercado: ${marketOrder.calculateProfitLoss()}`);
+console.log(`Ganancia/perdica por Orden Limitada: ${limitOrder.calculateProfitLoss()}`);
 
 // Obtener tendencias
-console.log(`BTC Trend: ${simulator.getTrend('BTC')}`);
-console.log(`ETH Trend: ${simulator.getTrend('ETH')}`);
+console.log(`BTC Tendencia: ${simulator.getTrend('BTC')}`);
+console.log(`ETH Tendencia: ${simulator.getTrend('ETH')}`);
