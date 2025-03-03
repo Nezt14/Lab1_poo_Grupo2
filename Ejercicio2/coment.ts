@@ -11,18 +11,18 @@ class Comentario {
 }
 
 class CajaComents {
-    private TComent: Comentario[] = [];
-    private IComent: Comentario[] = [];
-    private VComent: Comentario[] = [];
+    public TComent: Comentario[] = [];
+    public IComent: Comentario[] = [];
+    public VComent: Comentario[] = [];
 
-    public addTComent(TCome: Comentario): void {
-        this.TComent.push(TCome)
+    public addTComent(TComent: Comentario): void {
+        this.TComent.push(TComent)
     }
-    public addIComent(ICome: Comentario): void {
-        this.IComent.push(ICome)
+    public addIComent(IComent: Comentario): void {
+        this.IComent.push(IComent)
     }
-    public addVComent(VCome: Comentario): void {
-        this.VComent.push(VCome)
+    public addVComent(VComent: Comentario): void {
+        this.VComent.push(VComent)
     }
 
     public verTextComent(): void {
@@ -60,17 +60,17 @@ export async function ManejarComentarios() {
                     switch (opcion1) {
                         case 1:
                             console.log(`comentarios actuales:`)
-                            cajaComents.verTextComent()
+                            cajaComents.verTextComent();
                             ManejarComentarios()
                             break;
                         case 2:
                             console.log(`comentarios actuales:`)
-                            cajaComents.verImageComent()
+                            cajaComents.verImageComent();
                             ManejarComentarios()
                             break;
                         case 3:
                             console.log(`comentarios actuales: `)
-                            cajaComents.verVideoComent()
+                            cajaComents.verVideoComent();
                             ManejarComentarios()
                             break;
 
