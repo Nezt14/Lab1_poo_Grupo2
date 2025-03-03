@@ -59,15 +59,18 @@ export async function ManejarComentarios() {
                     const opcion1 = Number(await rl.question(`opcion: `))
                     switch (opcion1) {
                         case 1:
-                            console.log(`comentarios actuales ${cajaComents.verTextComent()} `)
+                            console.log(`comentarios actuales:`)
+                            cajaComents.verTextComent()
                             ManejarComentarios()
                             break;
                         case 2:
-                            console.log(`comentarios actuales ${cajaComents.verImageComent()} `)
+                            console.log(`comentarios actuales:`)
+                            cajaComents.verImageComent()
                             ManejarComentarios()
                             break;
                         case 3:
-                            console.log(`comentarios actuales ${cajaComents.verVideoComent()} `)
+                            console.log(`comentarios actuales: `)
+                            cajaComents.verVideoComent()
                             ManejarComentarios()
                             break;
 
