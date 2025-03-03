@@ -43,11 +43,10 @@ class CajaComents {
 }
 
 
-
+const cajaComents = new CajaComents()
 
 export async function ManejarComentarios() {
-    const cajaComents = new CajaComents()
-    // un switch para que pueda elejir si ver los comentarios o agregar uno
+    
     let condition = true
     do {
         try {

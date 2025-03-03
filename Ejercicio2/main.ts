@@ -8,7 +8,6 @@ import { ManejarComentarios } from "./coment";
 
 
 
-//Redes sociales
 export async function Menu() {
 
     let condition = true;
@@ -21,14 +20,14 @@ export async function Menu() {
                     console.log(`(hay que publicar en orden 1, 2, 3 para que funcione) `)
                     publicaralgo()
                     break;
-                case 2:// gestionar amistades
+                case 2:
                     const opcion2 = Number(await rl.question(`Que desea hacer? \n 1. Ver amistades \n 2. agregar o eliminiar un amigo \n opcion: `))
                     switch (opcion2) {
                         case 1:
                             seeFriends(friendsList)
                             Menu()
                             break;
-                        case 2://agregar o eliminar
+                        case 2:
                             manageFriends()
                             break;
 
@@ -36,12 +35,12 @@ export async function Menu() {
                             break;
                     }
                     break;
-                case 3:// ver publicaciones "aqui meter ver comentarios y compartir publicaciones" y las interacciones en este caso los likes
+                case 3:
                     console.log(`Publicaciones actuales:`)
                     seePosts(Publicaciones)
-                    const opcion3 = Number(await rl.question(`Que desea hacer? \n 1. Ver comentarios \n 2. compartir publicacion \n 3. regresar \n opcion: `))
+                    const opcion3 = Number(await rl.question(`Que desea hacer? \n 1. Comentarios \n 2. compartir publicacion \n 3. regresar \n opcion: `))
                     switch (opcion3) {
-                        case 1://comentarios
+                        case 1:
                             ManejarComentarios()
 
                             break;
@@ -57,14 +56,14 @@ export async function Menu() {
                     }
 
                     break;
-                case 4://ver/mandar mensajes
+                case 4:
                 messages()
                     break;
-                case 5:// interacciones?
+                case 5:
                 Interacciones()
                     break;
 
-                case 6:// salir
+                case 6:
                     console.log(`Saliendo del programa`)
                     condition = false;
                     rl.close();

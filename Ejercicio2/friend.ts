@@ -30,7 +30,7 @@ export async function seeFriends(friendsList: any[]) {
         console.log(`${i + 1}. ${amigo.name}`)
     }
 }
-export async function manageFriends() {//agregar o eliminar amigos
+export async function manageFriends() {
     const opcion = Number(await rl.question(`que desea hacer \n 1. agregar un amigo. \n 2. eliminar un amigo. \n ocpion: `))
     seeFriends(friendsList)
     switch (opcion) {
@@ -58,14 +58,14 @@ export async function manageFriends() {//agregar o eliminar amigos
 
 }
 
-export async function shareFriend() {// esto para compartir con los amigos
+export async function shareFriend() {
     seePosts(Publicaciones)
     let tipoPublicacion = Number(await rl.question(`que publicacion quiere compartir? `))
 
 
     seeFriends(friendsList)
     const opcion = Number(await rl.question(`con quien desea compartir esta publicacion? \n opcion: `))
-    //falta agregar aqui creo que un for servira
+
     switch (opcion) {
         case 1:
             console.log(`su ${tipoPublicacion} fue compartida con ${friendsList[amigo1].name} `)
