@@ -1,13 +1,16 @@
 Codigo para ejecutar cada ejercicio.
 
 # ejercicio 1:
-Por parte de David
+Por parte de David,
+
 ts-node .\Ejercicio1\mains.ts 
 
 # ejercicio 2:
-Por parte de Nestor
+Por parte de Nestor,
+
 ts-node .\Ejercicio2\main.ts
 
 # ejercicio 3:
-Por parte de Cris
+Por parte de Cristian,
+
 ts-node .\Ejercicio3\main.ts
